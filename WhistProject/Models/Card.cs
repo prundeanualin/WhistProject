@@ -26,7 +26,7 @@ namespace WhistProject.Models
 
         protected Boolean checkRange(int number)
         {
-            if (this.number <= 15 && this.number > 0)
+            if (this.number <= 14 && this.number >= 2)
                 return true;
             return false;
         }
