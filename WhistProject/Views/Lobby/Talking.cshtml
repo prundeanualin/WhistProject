@@ -1,0 +1,32 @@
+﻿@using Microsoft.Ajax.Utilities
+@model WhistProject.Models.Player
+@{
+    ViewBag.Title = "Lobby";
+}
+
+<h2>Talking now</h2>
+<div id="_chatArea">
+    @Html.Partial("_ChatView", Model)
+</div>
+    @*{@Html.RenderAction("UpdateChat");}*@
+<div class="write-chat">
+    @using (Html.BeginForm("Talking", "Lobby", FormMethod.Post))
+    {
+    <div>
+        @Html.HiddenFor(model => model.username, Model.username)
+    </div>
+        <div class="write">
+            @Html.TextBoxFor(model => model.msg, "")
+        </div>
+        <input type="submit" value="Send Message" class="send-chat-btn" name="Submit Button" />
+    }
+</div>
+<script type="text/javascript">
+    var url = '@Url.Action("UpdateChat", "Lobby", Model.username)';
+    var notification = $("#_chatArea");
+    $(document).ready(function () {
+        setInterval(function () {
+            notification.load(url);
+        }, 2000);
+    });
+</script>

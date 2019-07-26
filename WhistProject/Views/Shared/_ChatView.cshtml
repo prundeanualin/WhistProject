@@ -1,0 +1,19 @@
+﻿@model WhistProject.Models.Player
+
+<div class="chat">
+    <ul id="ChatArea" style="list-style-type: none; margin: 20px 0px 10px 0px; width:auto; max-height: 300px; min-height: 300px;
+        overflow:hidden; overflow-y:scroll">
+        <li><p>Time to chat!</p></li>
+        @{
+            for (int i = 0; i < Model.chat.Count; i++)
+            {
+                string msg = Model.chat[i];
+                <li>
+                    <p>
+                        @msg
+                    </p>
+                </li>
+            }
+        }
+    </ul>
+</div>

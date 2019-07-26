@@ -14,9 +14,13 @@ namespace WhistProject.Models
         public int nrOfHandsPlayed;
         public int expectedToPlay;
         public List<Player> players;
-        public Game(List<Player> players)
+        public Game(List<string> names)
         {
-            this.players = players;
+            this.players = new List<Player>();
+            for(int i = 0;i < names.Count ; i++)
+            {
+                players.Add(new Player(names[i]));
+            }
         }
         public int getSize(List<Player> players)
         {
