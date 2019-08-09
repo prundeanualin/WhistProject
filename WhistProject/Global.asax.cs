@@ -20,6 +20,7 @@ namespace WhistProject
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
+            HttpContext.Current.Application["NrOnlineUsers"] = 0;
         }
     }
 }

@@ -28,6 +28,12 @@ namespace WhistProject.Controllers
             return View();
         }
 
+        public ActionResult Chat()
+        {
+            ViewBag.Message = "Welcome to chatting area";
+            return View();
+        }
+
 
     }
 }
