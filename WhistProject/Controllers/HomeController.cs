@@ -27,7 +27,12 @@ namespace WhistProject.Controllers
 
             return View();
         }
-
+        
+        public ActionResult Introduction()
+        {
+            ViewBag.Message = "Risk or play safe ?";
+            return View();
+        }
 
     }
 }

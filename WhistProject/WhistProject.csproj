@@ -214,11 +214,13 @@
     <Content Include="Content\bootstrap-cyborg.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\video-custom.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
     <Content Include="Resources\arctic_camo.png" />
+    <Content Include="Resources\intro.mp4" />
     <Content Include="Resources\siberia_camo.png" />
     <Content Include="Resources\texture.png" />
     <Content Include="Resources\tiger_camo.jpg" />
@@ -274,6 +276,7 @@
     <Content Include="Views\Lobby\Lobby.cshtml" />
     <Content Include="Views\Lobby\Talking.cshtml" />
     <Content Include="Views\Shared\_ChatView.cshtml" />
+    <Content Include="Views\Home\Introduction.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
