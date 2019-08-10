@@ -22,6 +22,9 @@ namespace WhistProject.Chat
                 con += "<li>" + namen + "</li>";
             }
             Clients.All.user(con);
+            int a = (int)HttpContext.Current.Application["NrOnlineUsers"];
+            a += 1;
+            HttpContext.Current.Application["NrOnlineUsers"] = a;
             return base.OnConnected();
         }
 
