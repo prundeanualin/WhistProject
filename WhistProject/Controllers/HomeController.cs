@@ -27,12 +27,13 @@ namespace WhistProject.Controllers
 
             return View();
         }
-        
-        public ActionResult Introduction()
+
+        public ActionResult Chat()
         {
-            ViewBag.Message = "Risk or play safe ?";
+            ViewBag.Message = "Welcome to chatting area";
             return View();
         }
+
 
     }
 }
