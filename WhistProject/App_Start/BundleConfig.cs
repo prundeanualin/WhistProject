@@ -22,8 +22,12 @@ namespace WhistProject
             bundles.Add(new ScriptBundle("~/bundles/bootstrap").Include(
                       "~/Scripts/bootstrap.js"));
 
+            bundles.Add(new ScriptBundle("~/bundles/video-pause").Include(
+                     "~/Scripts/video-pause.js"));
+
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap-cyborg.css",
+                      "~/Content/video-custom.css",
                       "~/Content/site.css"));
         }
     }
