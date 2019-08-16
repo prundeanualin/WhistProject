@@ -16,7 +16,10 @@ namespace WhistProject.Chat
             string con = "";
             var name = Context.User.Identity.Name;
             int count = CurrentConnections.Count;
-            CurrentConnections.Add(name);
+            if (!CurrentConnections.Contains(name))
+            {
+                CurrentConnections.Add(name);
+            }
             foreach (string namen in CurrentConnections)
             {
                 con += "<li>" + namen + "</li>";
