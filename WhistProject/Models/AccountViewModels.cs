@@ -65,9 +65,22 @@ namespace WhistProject.Models
     public class RegisterViewModel
     {
         [Required]
+        [StringLength(64, ErrorMessage ="The username must be at least 1 character long", MinimumLength = 1)]
+        [DataType(DataType.Text)]
+        [Display(Name = "Username")]
+        public string Username { get; set; }
+
+        [Display(Name="First Name")]
+        public string firstName { get; set; }
+
+        [Required]
         [EmailAddress]
         [Display(Name = "Email")]
         public string Email { get; set; }
+
+        [Phone]
+        [Display(Name = "Phone")]
+        public string Phone { get; set; }
 
         [Required]
         [StringLength(100, ErrorMessage = "The {0} must be at least {2} characters long.", MinimumLength = 6)]
