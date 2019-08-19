@@ -8,6 +8,7 @@ namespace WhistProject.Models
 {
     public class Player
     {
+        public int Id { get; set; }
         [StringLength(30, MinimumLength = 4)]
         [Required]
         public string username { get; set; }
