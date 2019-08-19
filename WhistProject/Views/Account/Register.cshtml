@@ -9,29 +9,50 @@
 {
     @Html.AntiForgeryToken()
     <h4>Create a new account.</h4>
-    <hr />
+    <hr class="warning"/>
     @Html.ValidationSummary("", new { @class = "text-danger" })
-    <div class="form-group">
+    <div class="form-group btn-outline-warning text-warning">
         @Html.LabelFor(m => m.Email, new { @class = "col-md-2 control-label" })
-        <div class="col-md-10">
-            @Html.TextBoxFor(m => m.Email, new { @class = "form-control" })
+        <div class="col-md-10 text-warning">
+            @Html.TextBoxFor(m => m.Email, new { @class = "form-control text-warning" })
         </div>
     </div>
-    <div class="form-group">
+    <div class="form-group text-warning border-primary">
+        @Html.LabelFor(m => m.Username, new { @class = "col-md-2 control-label" })
+        <div class="col-md-10 text-danger border border-warning">
+            @Html.TextBoxFor(m => m.Username, new { @class = "form-control text-warning" })
+        </div>
+
+    </div>
+    <div class="form-group text-warning">
+        @Html.LabelFor(m => m.firstName, new { @class = "col-md-2 control-label" })
+        <div class="col-md-10 text-warning">
+            @Html.TextBoxFor(m => m.Email, new { @class = "form-control text-warning" })
+        </div>
+
+    </div>
+    <div class="form-group text-warning">
+        @Html.LabelFor(m => m.lastName, new { @class = "col-md-2 control-label" })
+        <div class="col-md-10 text-warning">
+            @Html.TextBoxFor(m => m.Email, new { @class = "form-control text-warning" })
+        </div>
+
+    </div>
+    <div class="form-group text-warning">
         @Html.LabelFor(m => m.Password, new { @class = "col-md-2 control-label" })
-        <div class="col-md-10">
-            @Html.PasswordFor(m => m.Password, new { @class = "form-control" })
+        <div class="col-md-10 text-warning">
+            @Html.PasswordFor(m => m.Password, new { @class = "form-control text-warning" })
         </div>
     </div>
-    <div class="form-group">
+    <div class="form-group text-warning">
         @Html.LabelFor(m => m.ConfirmPassword, new { @class = "col-md-2 control-label" })
-        <div class="col-md-10">
-            @Html.PasswordFor(m => m.ConfirmPassword, new { @class = "form-control" })
+        <div class="col-md-10 text-warning">
+            @Html.PasswordFor(m => m.ConfirmPassword, new { @class = "form-control text-warning" })
         </div>
     </div>
     <div class="form-group">
         <div class="col-md-offset-2 col-md-10">
-            <input type="submit" class="btn btn-default" value="Register" />
+            <input type="submit" class="btn btn-block btn-warning" value="Register" />
         </div>
     </div>
 }

@@ -70,25 +70,25 @@ namespace WhistProject.Models
         [Display(Name = "Username")]
         public string Username { get; set; }
 
-        [Display(Name="First Name")]
-        public string firstName { get; set; }
-
         [Required]
         [EmailAddress]
         [Display(Name = "Email")]
         public string Email { get; set; }
 
-        [Phone]
-        [Display(Name = "Phone")]
-        public string Phone { get; set; }
+        [Display(Name = "First Name")]
+        public string firstName { get; set; }
+
+        [Display(Name = "Last Name")]
+        public string lastName { get; set; }
 
         [Required]
         [StringLength(100, ErrorMessage = "The {0} must be at least {2} characters long.", MinimumLength = 6)]
         [DataType(DataType.Password)]
+       // [RegularExpression("^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])$")]
         [Display(Name = "Password")]
         public string Password { get; set; }
 
-        [DataType(DataType.Password)]
+        [DataType(DataType.Text)]
         [Display(Name = "Confirm password")]
         [Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
         public string ConfirmPassword { get; set; }
@@ -103,11 +103,11 @@ namespace WhistProject.Models
 
         [Required]
         [StringLength(100, ErrorMessage = "The {0} must be at least {2} characters long.", MinimumLength = 6)]
-        [DataType(DataType.Password)]
+        [RegularExpression("^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=\\S+$)$")]
         [Display(Name = "Password")]
         public string Password { get; set; }
 
-        [DataType(DataType.Password)]
+        [DataType(DataType.Text)]
         [Display(Name = "Confirm password")]
         [Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
         public string ConfirmPassword { get; set; }
