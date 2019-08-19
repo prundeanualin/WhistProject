@@ -13,7 +13,7 @@
             @Html.ActionLink("Chat", "Chat", "Home")
         </li>
         <li id="OnlineCount">
-            Users online: 
+            Users online: @HttpContext.Current.Application["NrOnlineUsers"]
         </li>
         <li><a href="javascript:document.getElementById('logoutForm').submit()">Log off</a></li>
     </ul>

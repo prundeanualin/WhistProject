@@ -8,25 +8,14 @@ namespace WhistProject.Models
 {
     public class Player
     {
+        public int Id { get; set; }
         [StringLength(30, MinimumLength = 4)]
         [Required]
         public string username { get; set; }
-        public List<string> chat { get; set; }
-        public string msg;
 
         public Player(String username)
         {
             this.username = username;
-        }
-
-        public Player()
-        {
-            chat = new List<string>();
-        }
-
-        public void AddMessage(string msg)
-        {
-            chat.Add(msg);
         }
 
         public override bool Equals(object obj)

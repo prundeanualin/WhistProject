@@ -16,12 +16,18 @@ namespace WhistProject.Chat
             string con = "";
             var name = Context.User.Identity.Name;
             int count = CurrentConnections.Count;
-            CurrentConnections.Add(name);
+            if (!CurrentConnections.Contains(name))
+            {
+                CurrentConnections.Add(name);
+            }
             foreach (string namen in CurrentConnections)
             {
                 con += "<li>" + namen + "</li>";
             }
             Clients.All.user(con);
+            int a = (int)HttpContext.Current.Application["NrOnlineUsers"];
+            a += 1;
+            HttpContext.Current.Application["NrOnlineUsers"] = a;
             return base.OnConnected();
         }
 

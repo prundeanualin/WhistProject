@@ -18,7 +18,7 @@
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <MvcBuildViews>false</MvcBuildViews>
     <UseIISExpress>true</UseIISExpress>
-    <Use64BitIISExpress />
+    <Use64BitIISExpress>false</Use64BitIISExpress>
     <IISExpressSSLPort />
     <IISExpressAnonymousAuthentication />
     <IISExpressWindowsAuthentication />
@@ -207,6 +207,15 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201907301537223_InitialCreate.cs" />
+    <Compile Include="Migrations\201907301537223_InitialCreate.Designer.cs">
+      <DependentUpon>201907301537223_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201908191453203_InitialThings.cs" />
+    <Compile Include="Migrations\201908191453203_InitialThings.Designer.cs">
+      <DependentUpon>201908191453203_InitialThings.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Card.cs" />
     <Compile Include="Models\DisplayableCard.cs" />
@@ -342,6 +351,14 @@
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="Scripts\index.d.ts" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201907301537223_InitialCreate.resx">
+      <DependentUpon>201907301537223_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201908191453203_InitialThings.resx">
+      <DependentUpon>201908191453203_InitialThings.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
