@@ -6,12 +6,32 @@
 <div class="jumbotron">
     <h1>Whist Project Game Alpha</h1>
 </div>
+<div>
+</div>
 
 <div class="row">
     <div class="col-md-4">
-       
+
     </div>
     <div class="col-md-4">
-       
+
     </div>
 </div>
+@if (Request.IsAuthenticated)
+{
+    <div class="left">
+        <h4>Online users: </h4>
+        <h4 id="counter"></h4>
+    </div>
+    <div id="buttonPlay" class="right">
+        @Html.ActionLink("Join a Game", "JoinGame", "Game")
+        @Html.ActionLink("Create new Game", "CreateNewGame", "Game")
+    </div>
+
+    @section scripts{
+        <script src="~/Scripts/jquery.signalR-2.4.1.js"></script>
+        <script src="~/signalr/hubs"></script>
+        <script src="~/app/nrOnlineUsers.js"></script>
+        <script src="~/Scripts/jquery.signalR-2.4.1.min.js"></script>
+    }
+}

@@ -1,39 +1,22 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Net;
-using System.Net.Http;
-using System.Web.Http;
+using System.Web;
+using System.Web.Mvc;
 
 namespace WhistProject.Controllers
 {
-    public class GameController : ApiController
+    public class GameController : Controller
     {
-        // GET: api/Game
-        public IEnumerable<string> Get()
+        // GET: Game
+        public ActionResult JoinGame()
         {
-            return new string[] { "value1", "value2" };
+            return View();
         }
 
-        // GET: api/Game/5
-        public string Get(int id)
+        public ActionResult CreateNewGame()
         {
-            return "value";
-        }
-
-        // POST: api/Game
-        public void Post([FromBody]string value)
-        {
-        }
-
-        // PUT: api/Game/5
-        public void Put(int id, [FromBody]string value)
-        {
-        }
-
-        // DELETE: api/Game/5
-        public void Delete(int id)
-        {
+            return View();
         }
     }
 }

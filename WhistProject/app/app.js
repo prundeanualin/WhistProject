@@ -5,9 +5,12 @@ hub.client.message = function (msg) {
 hub.client.user = function (innhtml) {
     $('#user').append(innhtml);
 }
-$.connection.hub.start(function () {
+hub.client.updateCounter = function (counter) {
+    $('#counter').text(counter);
+}
+function () {
     $("#send").click(function () {
         hub.server.send($("#txt").val());
         $("#txt").val(" ");
     });
-});
+};

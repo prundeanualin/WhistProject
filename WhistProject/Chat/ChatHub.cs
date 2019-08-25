@@ -1,12 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using System.Web;
 using Microsoft.AspNet.SignalR;
+using Microsoft.AspNet.SignalR.Hubs;
 
 namespace WhistProject.Chat
 {
+    [HubName("chatHub")]
     public class ChatHub : Hub
     {
         static HashSet<string> CurrentConnections = new HashSet<string>();
@@ -15,7 +15,6 @@ namespace WhistProject.Chat
         {
             string con = "";
             var name = Context.User.Identity.Name;
-            int count = CurrentConnections.Count;
             if (!CurrentConnections.Contains(name))
             {
                 CurrentConnections.Add(name);
@@ -24,10 +23,8 @@ namespace WhistProject.Chat
             {
                 con += "<li>" + namen + "</li>";
             }
+            Clients.All.updateCounter(CurrentConnections.Count);
             Clients.All.user(con);
-            int a = (int)HttpContext.Current.Application["NrOnlineUsers"];
-            a += 1;
-            HttpContext.Current.Application["NrOnlineUsers"] = a;
             return base.OnConnected();
         }
 
@@ -42,6 +39,7 @@ namespace WhistProject.Chat
                 {
                     con += "<li>" + namen + "</li>";
                 }
+                Clients.All.updateCounter(CurrentConnections.Count);
                 Clients.Others.user(con);
             }
             return base.OnDisconnected(stop);
