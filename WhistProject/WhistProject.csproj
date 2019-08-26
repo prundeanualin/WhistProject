@@ -18,7 +18,8 @@
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <MvcBuildViews>false</MvcBuildViews>
     <UseIISExpress>true</UseIISExpress>
-    <Use64BitIISExpress>false</Use64BitIISExpress>
+    <Use64BitIISExpress>
+    </Use64BitIISExpress>
     <IISExpressSSLPort />
     <IISExpressAnonymousAuthentication />
     <IISExpressWindowsAuthentication />
@@ -200,8 +201,10 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Chat\ChatHub.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\BaseController.cs" />
     <Compile Include="Controllers\GameController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\LobbyController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -214,9 +217,13 @@
     <Compile Include="Migrations\201908191453203_InitialThings.Designer.cs">
       <DependentUpon>201908191453203_InitialThings.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201908260007055_cleanDb.cs" />
-    <Compile Include="Migrations\201908260007055_cleanDb.Designer.cs">
-      <DependentUpon>201908260007055_cleanDb.cs</DependentUpon>
+    <Compile Include="Migrations\201908201630587_add_names.cs" />
+    <Compile Include="Migrations\201908201630587_add_names.Designer.cs">
+      <DependentUpon>201908201630587_add_names.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201908201640470_2_a.cs" />
+    <Compile Include="Migrations\201908201640470_2_a.Designer.cs">
+      <DependentUpon>201908201640470_2_a.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -232,7 +239,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="app\app.js" />
-    <Content Include="app\nrOnlineUsers.js" />
+    <Content Include="app\user.js" />
     <Content Include="Content\bootstrap-cosmo.css" />
     <Content Include="Content\bootstrap-cyborg.css" />
     <Content Include="Content\bootstrap-grid.css" />
@@ -247,6 +254,7 @@
     <Content Include="Content\Site.css" />
     <Content Include="Resources\arctic_camo.png" />
     <Content Include="Resources\intro.mp4" />
+    <Content Include="Resources\Settings icon.png" />
     <Content Include="Resources\siberia_camo.png" />
     <Content Include="Resources\texture.png" />
     <Content Include="Resources\tiger_camo.jpg" />
@@ -330,6 +338,7 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Views\Lobby\Index.cshtml" />
     <Content Include="Views\Home\Chat.cshtml" />
     <Content Include="Scripts\umd\popper.min.js.map" />
     <Content Include="Scripts\umd\popper.js.map" />
@@ -344,13 +353,14 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\Game\" />
+    <Folder Include="Views\Base\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="Scripts\index.d.ts" />
@@ -362,8 +372,11 @@
     <EmbeddedResource Include="Migrations\201908191453203_InitialThings.resx">
       <DependentUpon>201908191453203_InitialThings.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201908260007055_cleanDb.resx">
-      <DependentUpon>201908260007055_cleanDb.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201908201630587_add_names.resx">
+      <DependentUpon>201908201630587_add_names.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201908201640470_2_a.resx">
+      <DependentUpon>201908201640470_2_a.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
