@@ -10,10 +10,10 @@ namespace WhistProject.Chat
     public class ChatHub : Hub
     {
         static HashSet<string> CurrentConnections = new HashSet<string>();
+        static string con = "";
 
         public override Task OnConnected()
         {
-            string con = "";
             var name = Context.User.Identity.Name;
             if (!CurrentConnections.Contains(name))
             {
@@ -47,6 +47,7 @@ namespace WhistProject.Chat
 
         public void send(string message)
         {
+            Clients.All.user(con);
             Clients.Caller.message("You: " + message);
             Clients.Others.message(Context.User.Identity.Name + ": " + message);
         }

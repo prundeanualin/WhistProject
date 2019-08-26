@@ -84,7 +84,7 @@ namespace WhistProject.Models
         [Required]
         [StringLength(100, ErrorMessage = "The {0} must be at least {2} characters long.", MinimumLength = 6)]
         [DataType(DataType.Password)]
-       // [RegularExpression("^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])$")]
+        [RegularExpression("^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])$")]
         [Display(Name = "Password")]
         public string Password { get; set; }
 

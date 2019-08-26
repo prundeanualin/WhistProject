@@ -214,6 +214,10 @@
     <Compile Include="Migrations\201908191453203_InitialThings.Designer.cs">
       <DependentUpon>201908191453203_InitialThings.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201908260007055_cleanDb.cs" />
+    <Compile Include="Migrations\201908260007055_cleanDb.Designer.cs">
+      <DependentUpon>201908260007055_cleanDb.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Card.cs" />
@@ -357,6 +361,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201908191453203_InitialThings.resx">
       <DependentUpon>201908191453203_InitialThings.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201908260007055_cleanDb.resx">
+      <DependentUpon>201908260007055_cleanDb.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
