@@ -23,6 +23,7 @@ namespace WhistProject.Models
             var player = obj as Player;
             return player != null &&
                    username == player.username;
+
         }
     }
 }
