@@ -7,13 +7,13 @@ namespace WhistProject.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.2.0-61023")]
-    public sealed partial class add_names : IMigrationMetadata
+    public sealed partial class StoreUsernameInAnotherTable : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(add_names));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(StoreUsernameInAnotherTable));
         
         string IMigrationMetadata.Id
         {
-            get { return "201908201630587_add_names"; }
+            get { return "201908261538397_StoreUsernameInAnotherTable"; }
         }
         
         string IMigrationMetadata.Source

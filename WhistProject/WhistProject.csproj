@@ -18,8 +18,7 @@
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <MvcBuildViews>false</MvcBuildViews>
     <UseIISExpress>true</UseIISExpress>
-    <Use64BitIISExpress>
-    </Use64BitIISExpress>
+    <Use64BitIISExpress>false</Use64BitIISExpress>
     <IISExpressSSLPort />
     <IISExpressAnonymousAuthentication />
     <IISExpressWindowsAuthentication />
@@ -204,7 +203,6 @@
     <Compile Include="Controllers\BaseController.cs" />
     <Compile Include="Controllers\GameController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Controllers\LobbyController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -217,13 +215,21 @@
     <Compile Include="Migrations\201908191453203_InitialThings.Designer.cs">
       <DependentUpon>201908191453203_InitialThings.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201908201630587_add_names.cs" />
-    <Compile Include="Migrations\201908201630587_add_names.Designer.cs">
-      <DependentUpon>201908201630587_add_names.cs</DependentUpon>
+    <Compile Include="Migrations\201908261254413_CleanUp.cs" />
+    <Compile Include="Migrations\201908261254413_CleanUp.Designer.cs">
+      <DependentUpon>201908261254413_CleanUp.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201908201640470_2_a.cs" />
-    <Compile Include="Migrations\201908201640470_2_a.Designer.cs">
-      <DependentUpon>201908201640470_2_a.cs</DependentUpon>
+    <Compile Include="Migrations\201908261330515_SolvePwProblem.cs" />
+    <Compile Include="Migrations\201908261330515_SolvePwProblem.Designer.cs">
+      <DependentUpon>201908261330515_SolvePwProblem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201908261409467_SolvePwProblem1.cs" />
+    <Compile Include="Migrations\201908261409467_SolvePwProblem1.Designer.cs">
+      <DependentUpon>201908261409467_SolvePwProblem1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201908261538397_StoreUsernameInAnotherTable.cs" />
+    <Compile Include="Migrations\201908261538397_StoreUsernameInAnotherTable.Designer.cs">
+      <DependentUpon>201908261538397_StoreUsernameInAnotherTable.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -239,7 +245,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="app\app.js" />
-    <Content Include="app\user.js" />
     <Content Include="Content\bootstrap-cosmo.css" />
     <Content Include="Content\bootstrap-cyborg.css" />
     <Content Include="Content\bootstrap-grid.css" />
@@ -338,7 +343,6 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
-    <Content Include="Views\Lobby\Index.cshtml" />
     <Content Include="Views\Home\Chat.cshtml" />
     <Content Include="Scripts\umd\popper.min.js.map" />
     <Content Include="Scripts\umd\popper.js.map" />
@@ -353,7 +357,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\Base\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -372,11 +375,17 @@
     <EmbeddedResource Include="Migrations\201908191453203_InitialThings.resx">
       <DependentUpon>201908191453203_InitialThings.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201908201630587_add_names.resx">
-      <DependentUpon>201908201630587_add_names.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201908261254413_CleanUp.resx">
+      <DependentUpon>201908261254413_CleanUp.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201908201640470_2_a.resx">
-      <DependentUpon>201908201640470_2_a.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201908261330515_SolvePwProblem.resx">
+      <DependentUpon>201908261330515_SolvePwProblem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201908261409467_SolvePwProblem1.resx">
+      <DependentUpon>201908261409467_SolvePwProblem1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201908261538397_StoreUsernameInAnotherTable.resx">
+      <DependentUpon>201908261538397_StoreUsernameInAnotherTable.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

@@ -3,8 +3,8 @@ hub.client.message = function (msg) {
     $("#message").append("<li>" + msg + "</li>")
 }
 hub.client.user = function (innhtml) {
-    $("#user").text = "";
-    $('#user').append(innhtml);
+    //$("#user").html("");
+    $('#user').html(innhtml);
 }
 hub.client.updateCounter = function (counter) {
     $('#counter').text(counter);

@@ -9,13 +9,20 @@ namespace WhistProject.Models
     public class Player
     {
         public int Id { get; set; }
-        [StringLength(30, MinimumLength = 4)]
         [Required]
         public string username { get; set; }
+        [Required]
+        public string email { get; set; }
 
-        public Player(String username)
+        public Player(string username, string email)
         {
             this.username = username;
+            this.email = email;
+        }
+
+        public Player()
+        {
+
         }
 
         public override bool Equals(object obj)

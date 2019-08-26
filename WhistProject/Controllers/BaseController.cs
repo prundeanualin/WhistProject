@@ -11,25 +11,23 @@ namespace WhistProject.Controllers
     {
         protected override void OnActionExecuted(ActionExecutedContext filterContext)
         {
-            if (User != null)
+            if (User.Identity.IsAuthenticated)
             {
-                var context = new ApplicationDbContext();
-                var username = User.Identity.Name;
+                var email = User.Identity.Name;
 
-                if (!string.IsNullOrEmpty(username))
+                if (!string.IsNullOrEmpty(email))
                 {
-                    var user = context.Users.SingleOrDefault(u => u.UserName == username);
-                    string firstName = user.First_Name;
-                    string lastName = user.Last_Name;
-                    string email = user.Email;
-                    ViewData.Add("Email", email);
-                    ViewData.Add("First Name", firstName);
-                    ViewData.Add("Last Name", lastName);
+                    using (var db = new ApplicationDbContext())
+                    {
+                        string username = db.Player.Where(u => u.email == email).Single().username;
+                        ViewData.Add("UserName", username);
+                    }
                 }
             }
             base.OnActionExecuted(filterContext);
         }
         public BaseController()
-        { }
+        {
+        }
     }
 }

@@ -3,6 +3,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNet.SignalR;
 using Microsoft.AspNet.SignalR.Hubs;
+using WhistProject.Models;
 
 namespace WhistProject.Chat
 {
@@ -10,14 +11,19 @@ namespace WhistProject.Chat
     public class ChatHub : Hub
     {
         static HashSet<string> CurrentConnections = new HashSet<string>();
-        static string con = "";
 
         public override Task OnConnected()
         {
             var name = Context.User.Identity.Name;
-            if (!CurrentConnections.Contains(name))
+            string username;
+            string con = "";
+            using (var db = new ApplicationDbContext())
             {
-                CurrentConnections.Add(name);
+                username = db.Player.Where(i => i.email == name).Single().username;
+            }
+            if (!CurrentConnections.Contains(username))
+            {
+                CurrentConnections.Add(username);
             }
             foreach (string namen in CurrentConnections)
             {
@@ -30,7 +36,12 @@ namespace WhistProject.Chat
 
         public override Task OnDisconnected(bool stop)
         {
-            var connection = CurrentConnections.FirstOrDefault(x => x == Context.User.Identity.Name);
+            string username;
+            using(var db = new ApplicationDbContext())
+            {
+                username = db.Player.Where(x => x.email == Context.User.Identity.Name).Single().username;
+            }
+            var connection = CurrentConnections.FirstOrDefault(x => x == username);
             if(connection != null)
             {
                 CurrentConnections.Remove(connection);
@@ -47,9 +58,13 @@ namespace WhistProject.Chat
 
         public void send(string message)
         {
-            Clients.All.user(con);
             Clients.Caller.message("You: " + message);
-            Clients.Others.message(Context.User.Identity.Name + ": " + message);
+            string username;
+            using (var db = new ApplicationDbContext())
+            {
+                username = db.Player.Where(x => x.email == Context.User.Identity.Name).Single().username;
+            }
+            Clients.Others.message(username + " : " + message);
         }
     }
 }

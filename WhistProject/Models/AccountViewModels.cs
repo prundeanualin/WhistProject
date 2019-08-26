@@ -66,8 +66,7 @@ namespace WhistProject.Models
     {
         [Required]
         [StringLength(64, ErrorMessage ="The username must be at least 1 character long", MinimumLength = 1)]
-        [DataType(DataType.Text)]
-        [Display(Name = "Username")]
+        [Display(Name = "UserName")]
         public string Username { get; set; }
 
         [Required]
@@ -75,20 +74,13 @@ namespace WhistProject.Models
         [Display(Name = "Email")]
         public string Email { get; set; }
 
-        [Display(Name = "First Name")]
-        public string firstName { get; set; }
-
-        [Display(Name = "Last Name")]
-        public string lastName { get; set; }
-
         [Required]
         [StringLength(100, ErrorMessage = "The {0} must be at least {2} characters long.", MinimumLength = 6)]
         [DataType(DataType.Password)]
-        [RegularExpression("^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])$")]
         [Display(Name = "Password")]
         public string Password { get; set; }
 
-        [DataType(DataType.Text)]
+        [DataType(DataType.Password)]
         [Display(Name = "Confirm password")]
         [Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
         public string ConfirmPassword { get; set; }

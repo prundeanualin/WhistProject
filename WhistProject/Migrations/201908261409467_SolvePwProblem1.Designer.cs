@@ -7,13 +7,13 @@ namespace WhistProject.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.2.0-61023")]
-    public sealed partial class cleanDb : IMigrationMetadata
+    public sealed partial class SolvePwProblem1 : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(cleanDb));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(SolvePwProblem1));
         
         string IMigrationMetadata.Id
         {
-            get { return "201908260007055_cleanDb"; }
+            get { return "201908261409467_SolvePwProblem1"; }
         }
         
         string IMigrationMetadata.Source
