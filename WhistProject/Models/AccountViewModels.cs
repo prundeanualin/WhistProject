@@ -66,7 +66,7 @@ namespace WhistProject.Models
     {
         [Required]
         [StringLength(64, ErrorMessage ="The username must be at least 1 character long", MinimumLength = 1)]
-        [Display(Name = "UserName")]
+        [Display(Name = "Username")]
         public string Username { get; set; }
 
         [Required]

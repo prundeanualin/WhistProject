@@ -19,8 +19,10 @@ namespace WhistProject.Controllers
                 {
                     using (var db = new ApplicationDbContext())
                     {
-                        string username = db.Player.Where(u => u.email == email).Single().username;
+                       string username = db.Users.Where(u => u.UserName == email).Single().UserName;
+                       string emailfromdatabase = db.Users.Where(u => u.UserName == email).Single().Email;
                         ViewData.Add("UserName", username);
+                       ViewData.Add("Email", emailfromdatabase);
                     }
                 }
             }

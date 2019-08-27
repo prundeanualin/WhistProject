@@ -1,7 +1,9 @@
 ﻿@using Microsoft.AspNet.Identity
+
 @model WhistProject.Models.IndexViewModel
 @{
     ViewBag.Title = "Manage";
+    var email = ViewData["email"];
 }
 
 <h2>@ViewBag.Title.</h2>
@@ -90,11 +92,8 @@
             @User.Identity.Name
         </dd>
         <dt>Email</dt>
-        @if (ViewData.ContainsKey("Email"))
-        {
             <dd>
-                Your email:   @Html.DisplayFor(m => m.Email);
+                @email
             </dd>
-        }
     </dl>
 </div>

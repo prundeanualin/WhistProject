@@ -18,7 +18,8 @@
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <MvcBuildViews>false</MvcBuildViews>
     <UseIISExpress>true</UseIISExpress>
-    <Use64BitIISExpress>false</Use64BitIISExpress>
+    <Use64BitIISExpress>
+    </Use64BitIISExpress>
     <IISExpressSSLPort />
     <IISExpressAnonymousAuthentication />
     <IISExpressWindowsAuthentication />
@@ -231,6 +232,18 @@
     <Compile Include="Migrations\201908261538397_StoreUsernameInAnotherTable.Designer.cs">
       <DependentUpon>201908261538397_StoreUsernameInAnotherTable.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201908271732473_update.cs" />
+    <Compile Include="Migrations\201908271732473_update.Designer.cs">
+      <DependentUpon>201908271732473_update.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201908271736483_erase.cs" />
+    <Compile Include="Migrations\201908271736483_erase.Designer.cs">
+      <DependentUpon>201908271736483_erase.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201908271743459_erase2.cs" />
+    <Compile Include="Migrations\201908271743459_erase2.Designer.cs">
+      <DependentUpon>201908271743459_erase2.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Card.cs" />
@@ -386,6 +399,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201908261538397_StoreUsernameInAnotherTable.resx">
       <DependentUpon>201908261538397_StoreUsernameInAnotherTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201908271732473_update.resx">
+      <DependentUpon>201908271732473_update.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201908271736483_erase.resx">
+      <DependentUpon>201908271736483_erase.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201908271743459_erase2.resx">
+      <DependentUpon>201908271743459_erase2.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
