@@ -14,13 +14,8 @@ namespace WhistProject.Chat
 
         public override Task OnConnected()
         {
-            var name = Context.User.Identity.Name;
-            string username;
+            string username = Context.User.Identity.Name;
             string con = "";
-            using (var db = new ApplicationDbContext())
-            {
-                username = db.Player.Where(i => i.email == name).Single().username;
-            }
             if (!CurrentConnections.Contains(username))
             {
                 CurrentConnections.Add(username);
@@ -36,11 +31,7 @@ namespace WhistProject.Chat
 
         public override Task OnDisconnected(bool stop)
         {
-            string username;
-            using (var db = new ApplicationDbContext())
-            {
-                username = db.Player.Where(x => x.email == Context.User.Identity.Name).Single().username;
-            }
+            string username = Context.User.Identity.Name;
             var connection = CurrentConnections.FirstOrDefault(x => x == username);
             if (connection != null)
             {
@@ -59,11 +50,7 @@ namespace WhistProject.Chat
         public void send(string message)
         {
             Clients.Caller.message("You: " + message);
-            string username;
-            using (var db = new ApplicationDbContext())
-            {
-                username = db.Player.Where(x => x.email == Context.User.Identity.Name).Single().username;
-            }
+            string username = Context.User.Identity.Name;
             Clients.Others.message(username + " : " + message);
         }
     }
