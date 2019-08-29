@@ -37,12 +37,12 @@ namespace WhistProject.Chat
         public override Task OnDisconnected(bool stop)
         {
             string username;
-            using(var db = new ApplicationDbContext())
+            using (var db = new ApplicationDbContext())
             {
                 username = db.Player.Where(x => x.email == Context.User.Identity.Name).Single().username;
             }
             var connection = CurrentConnections.FirstOrDefault(x => x == username);
-            if(connection != null)
+            if (connection != null)
             {
                 CurrentConnections.Remove(connection);
                 string con = "";

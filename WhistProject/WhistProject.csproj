@@ -209,41 +209,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201907301537223_InitialCreate.cs" />
-    <Compile Include="Migrations\201907301537223_InitialCreate.Designer.cs">
-      <DependentUpon>201907301537223_InitialCreate.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201908191453203_InitialThings.cs" />
-    <Compile Include="Migrations\201908191453203_InitialThings.Designer.cs">
-      <DependentUpon>201908191453203_InitialThings.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201908261254413_CleanUp.cs" />
-    <Compile Include="Migrations\201908261254413_CleanUp.Designer.cs">
-      <DependentUpon>201908261254413_CleanUp.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201908261330515_SolvePwProblem.cs" />
-    <Compile Include="Migrations\201908261330515_SolvePwProblem.Designer.cs">
-      <DependentUpon>201908261330515_SolvePwProblem.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201908261409467_SolvePwProblem1.cs" />
-    <Compile Include="Migrations\201908261409467_SolvePwProblem1.Designer.cs">
-      <DependentUpon>201908261409467_SolvePwProblem1.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201908261538397_StoreUsernameInAnotherTable.cs" />
-    <Compile Include="Migrations\201908261538397_StoreUsernameInAnotherTable.Designer.cs">
-      <DependentUpon>201908261538397_StoreUsernameInAnotherTable.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201908271732473_update.cs" />
-    <Compile Include="Migrations\201908271732473_update.Designer.cs">
-      <DependentUpon>201908271732473_update.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201908271736483_erase.cs" />
-    <Compile Include="Migrations\201908271736483_erase.Designer.cs">
-      <DependentUpon>201908271736483_erase.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201908271743459_erase2.cs" />
-    <Compile Include="Migrations\201908271743459_erase2.Designer.cs">
-      <DependentUpon>201908271743459_erase2.cs</DependentUpon>
+    <Compile Include="Migrations\201908290600069_FirstOne.cs" />
+    <Compile Include="Migrations\201908290600069_FirstOne.Designer.cs">
+      <DependentUpon>201908290600069_FirstOne.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -259,6 +227,10 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="app\app.js" />
+    <Content Include="App_Data\aspnet-WhistProject-20190711085354.mdf" />
+    <Content Include="App_Data\aspnet-WhistProject-20190711085354_log.ldf">
+      <DependentUpon>aspnet-WhistProject-20190711085354.mdf</DependentUpon>
+    </Content>
     <Content Include="Content\bootstrap-cosmo.css" />
     <Content Include="Content\bootstrap-cyborg.css" />
     <Content Include="Content\bootstrap-grid.css" />
@@ -370,7 +342,9 @@
     <Content Include="Views\Home\Introduction.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="App_Data\" />
+    <EmbeddedResource Include="Migrations\201908290600069_FirstOne.resx">
+      <DependentUpon>201908290600069_FirstOne.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -381,35 +355,6 @@
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="Scripts\index.d.ts" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Migrations\201907301537223_InitialCreate.resx">
-      <DependentUpon>201907301537223_InitialCreate.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201908191453203_InitialThings.resx">
-      <DependentUpon>201908191453203_InitialThings.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201908261254413_CleanUp.resx">
-      <DependentUpon>201908261254413_CleanUp.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201908261330515_SolvePwProblem.resx">
-      <DependentUpon>201908261330515_SolvePwProblem.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201908261409467_SolvePwProblem1.resx">
-      <DependentUpon>201908261409467_SolvePwProblem1.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201908261538397_StoreUsernameInAnotherTable.resx">
-      <DependentUpon>201908261538397_StoreUsernameInAnotherTable.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201908271732473_update.resx">
-      <DependentUpon>201908271732473_update.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201908271736483_erase.resx">
-      <DependentUpon>201908271736483_erase.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201908271743459_erase2.resx">
-      <DependentUpon>201908271743459_erase2.cs</DependentUpon>
-    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

@@ -10,7 +10,6 @@ namespace WhistProject.Migrations
         public Configuration()
         {
             AutomaticMigrationsEnabled = false;
-            ContextKey = "WhistProject.Models.ApplicationDbContext";
         }
 
         protected override void Seed(WhistProject.Models.ApplicationDbContext context)
